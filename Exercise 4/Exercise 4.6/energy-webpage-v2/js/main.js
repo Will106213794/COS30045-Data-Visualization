@@ -40,13 +40,6 @@ drawBarChart(data); // call the function to draw the bar chart
 // function to draw the bar chart
 const drawBarChart = data => {
 
-  //title 
-  svg
-    .append("text")
-        .attr("x", 60)
-        .attr("y", 15)
-        .attr("text-anchor", "middle")
-        .text("TV Brand Count");
 
 
 
