@@ -3,22 +3,7 @@
 <head>
     <title>SVG Comparison</title>
 
-    <style>
-        .container {
-            display: flex;
-            gap: 30px;
-        }
-
-        .image-container {
-    text-align: center;
-}
-
-        svg {
-            width: 500px;
-            height: 400px;
-            border: 1px solid black;
-        }
-    </style>
+    <link rel="stylesheet" href="css/SVGstyle.css">
 </head>
 
 <body>
@@ -122,6 +107,11 @@
               fill="lightgreen">
         </rect>
 
+        <!-- Path to house door -->
+<path d="M 370 500 L 400 410 L 450 410 L 480 500 Z"
+      fill="gray">
+</path>
+
     </svg>
     
 </div>
@@ -199,15 +189,15 @@
    stroke-width="2">
 
     <rect x="0" y="0"
-          width="50"
+        width="50"
           height="50"
-          transform="translate(330,270)">
+          transform="translate(380,270)">
     </rect>
 
     <rect x="0" y="0"
           width="50"
           height="50"
-          transform="translate(470,270)">
+          transform="translate(520,270)">
     </rect>
 
 </g>
@@ -218,6 +208,25 @@
               width="800" height="90"
               fill="lightgreen">
         </rect>
+
+
+        <!-- Path to house door    -->
+        <path d="M 450 500  
+         C 350 460, 500 450, 445 410
+         L 500 410
+         C 550 450, 370 460, 550 500
+         Z"
+      fill="gray">
+
+      
+        <!-- Note: M = Bottom Left , last C last coordinates = bottom right
+         first C last coordinates = top right
+         L = top left-->
+
+      
+</path>
+
+
 
     </svg>
     </div>
@@ -253,9 +262,14 @@
    </tr>
 
    <tr>
-   <td>Tree</td>
-   <td>x = 60, y = 300</td>
-   <td>x = 60, y = 300</td>
+   <td>Path to house</td>
+   <td>d="M 370 500 L 400 410 L 450 410 L 480 500 Z"
+      fill="gray"></td>
+   <td>d="M 450 500  
+         C 350 460, 500 450, 445 410
+         L 500 410
+         C 550 450, 370 460, 550 500
+         Z"</td>
    </tr>
  </tbody>
  
