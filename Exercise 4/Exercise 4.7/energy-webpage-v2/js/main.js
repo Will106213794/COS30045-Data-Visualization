@@ -49,7 +49,6 @@ const drawBarChart = data => {
 
 
 
-    // Code for bar chart goes here
     const barAndLabel = svg
   .selectAll("g")
   .data(data)
