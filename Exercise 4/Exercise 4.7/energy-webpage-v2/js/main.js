@@ -34,9 +34,6 @@ drawBarChart(data); // call the function to draw the bar chart
 const drawBarChart = data => {
 
 
-
-
-
    const xScale = d3.scaleLinear()
   .domain([0, 1100])
   .range([0, 400]);
