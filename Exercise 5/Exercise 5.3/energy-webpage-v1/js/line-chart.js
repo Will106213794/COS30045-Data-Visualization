@@ -84,24 +84,25 @@ innerChart
 
    // Draw scatter plot
     innerChart.selectAll("circle")
-        .data(data)
-        .join("circle")
-        .attr("r", 4)
-        .attr("cx", d => xScale(d.year))
-        .attr("cy", d => yScale(d.averagePrices))
-        .attr("fill", "black");
+        .data(data) // bring in the data
+        .join("circle") // create a circle for each data point
+        .attr("r", 4) // radius of the circle
+        .attr("cx", d => xScale(d.year)) // x axis position based on year
+        .attr("cy", d => yScale(d.averagePrices)) // y axis position based on averagePrices
+        .attr("fill", "black"); // color of the circle
 
 
-    const lineGenerator = d3.line()
-    .x(d => xScale(d.year)) // Center the line on the bar
-    .y(d => yScale(d.averagePrices));
+    const lineGenerator = d3.line() // Create a line generator function
+    .x(d => xScale(d.year)) // x axis position based on year
+    .y(d => yScale(d.averagePrices));  // y axis position based on averagePrices
 
 
+    // Draw the line connecting the points
     innerChart
     .append("path")
     .attr("fill", "none")
     .attr("stroke", "green")
     .attr("stroke-width", 2)
-    .attr("d", lineGenerator(data));
+    .attr("d", lineGenerator(data)); // call the line generator function with the data to create the path
 
 };
