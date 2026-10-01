@@ -48,6 +48,7 @@ const drawHistogram = (data) => {
     .selectAll("rect")
     .data(bins)
     .join("rect")
+    .attr("class", "bar") // create a class for the bars so we can select them later for interactions
     .attr("x", d => xScale(d.x0)) // Position the bar based on the lower bound of the bin
     .attr("y", d => yScale(d.length)) // Position the bar based on the count of items in the bin
     .attr("width", d => xScale(d.x1) - xScale(d.x0) - 1) // Set the width of the bar based on the bin width, minus 1 for spacing
