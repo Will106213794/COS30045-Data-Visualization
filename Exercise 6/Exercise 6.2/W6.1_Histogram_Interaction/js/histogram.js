@@ -42,8 +42,6 @@ const drawHistogram = (data) => {
 
     
 
-
-
  innerChart
     .selectAll("rect")
     .data(bins)
