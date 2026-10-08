@@ -65,7 +65,6 @@ innerChartS
 
         // Create tooltip for scatterplot
     
-
     const tooltip = createTooltip(innerChartS);
     // Add tooltip events to circles
     handleMouseEvents(

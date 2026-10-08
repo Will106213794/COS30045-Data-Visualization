@@ -24,14 +24,15 @@ const binGenerator = d3.bin()
 
 
 
-// filters setup globally
+// default filters setup globally
+
+// used in interactions.js
 const filters_screen =[
     {id: "All", label: "All", isActive: true},
     { id: "LED",label: "LED",isActive: false},
      { id: "OLED",label: "OLED",isActive: false},
      { id: "LCD",label: "LCD",isActive: false}
 ];
-
 
 
 const filters_size =[
@@ -46,7 +47,6 @@ const filters_size =[
 
 // scatterplot dimensions and scales
 let innerChartS;
-
 
 const tooltipWidth = 100;
 const tooltipHeight = 32;
