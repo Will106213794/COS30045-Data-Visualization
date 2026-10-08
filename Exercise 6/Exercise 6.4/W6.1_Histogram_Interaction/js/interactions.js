@@ -1,3 +1,4 @@
+// Function to populate the filter buttons for screen technology and size
 const populateFilters = (data) => {
    
 // Define the filters for screen technology
@@ -51,18 +52,34 @@ const populateFilters = (data) => {
     });
 
 
-
-    const updateHistogram = () => {
-        // Filter the data based on the active filter
+// Function to update the histogram based on the selected filter button clicked
+const updateHistogram = () => {
+        // Finds the active filter for screen technology and size from the filters_screen and filters_size arrays, respectively. The find method is used to locate the filter object where isActive is true, indicating that it is the currently selected filter.
+        // called filters_screen from shared-constants.js to filter the data based on the selected screen technology
             const selectedFilter = filters_screen.find(filter => filter.isActive);
 
-const updatedData = selectedFilter.id === "All"
-    ? data
-    : data.filter(tv => tv.screenTech === selectedFilter.id);
+
+              const selectedFilter2 = filters_size.find(filter => filter.isActive);
+
+           
+          
+    let updatedData = data;
+
+     // Filter by screen technology if a specific filter is selected (not "All")
+    if (selectedFilter.id !== "All") {
+        updatedData = updatedData.filter(tv => tv.screenTech === selectedFilter.id);
+    }
+
+    // Filter by screen size if a specific filter is selected (not "All Sizes")
+    if (selectedFilter2.id !== "All Sizes") {
+        updatedData = updatedData.filter(tv => tv.screenSize === selectedFilter2.id);
+    }
 
 
+        // Update the histogram with the filtered data
        const updatedBins = binGenerator(updatedData);
 
+       // Update the yScale domain based on the new bin lengths
        d3.selectAll("#histogram .bar")
        .data(updatedBins)
        .transition()
@@ -78,7 +95,8 @@ const updatedData = selectedFilter.id === "All"
 }
 
 
-
+// Function to create a tooltip for the chart
+// called from the histogram and scatterplot functions to create a tooltip for both types of charts before handling mouse events for the tooltip display
 const createTooltip = (chart) => {
 
 const tooltip = chart
@@ -113,6 +131,8 @@ const tooltip = chart
 }
 
 
+// Function to handle mouse events for tooltip display
+// called from the histogram and scatterplot functions to handle mouse events for both types of charts
 const handleMouseEvents = (selection, tooltip, getText) => {
    
 

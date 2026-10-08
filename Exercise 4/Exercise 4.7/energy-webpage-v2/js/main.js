@@ -1,3 +1,4 @@
+// place the svg element inside a div with class "responsive-svg-container" to make it responsive
 const svg = d3.select(".responsive-svg-container")
     .append("svg")
       .attr("viewBox", "0 0 500 500")
@@ -12,7 +13,7 @@ const svg = d3.select(".responsive-svg-container")
 }
 );
 
-
+// load the data from the csv file and log it to the console
 d3.csv("data/tvBrandCount.csv", d => {
   return {
     brand: d.brand,
@@ -45,7 +46,7 @@ const drawBarChart = data => {
  .padding(0.1);
 
 
-
+// create a group for each bar and its label
     const barAndLabel = svg
   .selectAll("g")
   .data(data)
@@ -72,7 +73,6 @@ const drawBarChart = data => {
     barAndLabel
 
     .append("text")
-
         .text(d => d.brand)
         .attr("x", 65)
         .attr("y", 13)

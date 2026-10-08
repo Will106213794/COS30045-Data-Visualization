@@ -21,23 +21,24 @@ const drawDonutChart = (data) => {
     const width = 500;
   const height = 500;
 
+  // Set up the SVG container for the donut chart
     const svg = d3.select("#donut-chart")
     .append("svg")
       .attr("viewBox", `0 0 ${width} ${height}`)
       .style("border", "1px solid black");
 
+      // Set up chart dimensions
     const margin = { top: 40, right: 170, bottom: 25, left: 40 };
-
-    // set up chart dimensions
   
-  const radius = Math.min(width, height) / 2 -20; // leave some padding for labels
+    const radius = Math.min(width, height) / 2 -20; // leave some padding for labels
 
-const color = d3.scaleOrdinal()
+    // Set up color scale for the donut chart
+    const color = d3.scaleOrdinal()
     .domain(data.map(d => d.screensize_cat))
     .range(d3.schemeTableau10); // color scale for the donut chart
 
-
-const pie = d3.pie()
+// Create a pie generator to compute the angles for each slice of the donut chart
+    const pie = d3.pie()
 .value(d => d.count)
 .sort(null); // disable sorting to maintain the original order of data
 
@@ -47,7 +48,7 @@ const ArcGenerator = d3.arc()
     .outerRadius(radius * 0.8); // outer radius for the donut chart
 
 
-    
+    // Create a group element to hold the donut chart and center it within the SVG container
     const innerChart = svg
     .append("g")
     .attr("transform", `translate(${width / 2}, ${height / 2})`); // center the chart

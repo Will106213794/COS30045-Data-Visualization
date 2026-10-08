@@ -87,13 +87,15 @@ innerChart
         .data(data) // bring in the data
         .join("circle") // create a circle for each data point
         .attr("r", 4) // radius of the circle
-        .attr("cx", d => xScale(d.year)) // x axis position based on year
+        .attr("cx", d => xScale(d.year)  + xScale.bandwidth() / 2) // x axis position based on year
         .attr("cy", d => yScale(d.averagePrices)) // y axis position based on averagePrices
         .attr("fill", "black"); // color of the circle
 
 
+        
+
     const lineGenerator = d3.line() // Create a line generator function
-    .x(d => xScale(d.year)) // x axis position based on year
+    .x(d => xScale(d.year) + xScale.bandwidth() / 2) // x axis position based on year
     .y(d => yScale(d.averagePrices));  // y axis position based on averagePrices
 
 

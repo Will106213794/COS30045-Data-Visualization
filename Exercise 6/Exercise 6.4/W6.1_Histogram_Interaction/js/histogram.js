@@ -42,7 +42,7 @@ const drawHistogram = (data) => {
 
     
 
-
+// Draw the histogram bars using the data from the bins. Each bar is represented by a rectangle (rect) element, and its position and size are determined by the xScale and yScale. The width of each bar is calculated based on the difference between the upper and lower bounds of the bin, minus 1 pixel for spacing between bars. The height of each bar is determined by the count of items in the bin, mapped to pixel positions using the yScale.
 
  innerChart
     .selectAll("rect")
@@ -69,8 +69,7 @@ innerChart
     .append("g")
     .call(leftAxis);
 
-// axis labels
-      // add y-axis label
+// axis labels in inner chart that already have margins applied above, so we can just add the labels without worrying about the margins
 innerChart
 .append("text")
 .text("Frequency")

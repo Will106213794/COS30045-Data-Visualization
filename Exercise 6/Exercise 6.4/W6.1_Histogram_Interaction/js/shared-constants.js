@@ -36,11 +36,11 @@ const filters_screen =[
 
 const filters_size =[
     {id: "All Sizes", label: "All Sizes", isActive: true},
-    { id: "24inch",label: "24\"",isActive: false},
-     { id: "32inch",label: "32\"",isActive: false},
-     { id: "55inch",label: "55\"",isActive: false},
-        { id: "65inch",label: "65\"",isActive: false},
-        { id: "98inch",label: "98\"",isActive: false}
+    { id: 24,label: "24\"",isActive: false},
+     { id: 32,label: "32\"",isActive: false},
+     { id: 55,label: "55\"",isActive: false},
+        { id: 65,label: "65\"",isActive: false},
+        { id: 98,label: "98\"",isActive: false}
 ];
 
 
